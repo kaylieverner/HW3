@@ -65,8 +65,8 @@ function generatePassword() {
   } else {
 
     // for loop for the length of the password length to choose the character types and add characters to a PW string value 
-    var passwordString=""
-    for (i = 0; i < passwordLength.length; i++) {
+    var passwordArray=[];
+    for (i = 0; i < passwordLength; i++) {
 
       if (
         includeUppercase === true
@@ -75,7 +75,7 @@ function generatePassword() {
 
         var a = uppercaseOptions[Math.floor(Math.random() * uppercaseOptions.length)];
         console.log(a);
-        passwordString += a;
+        passwordArray.push(a);
       }
 
       if (
@@ -85,7 +85,7 @@ function generatePassword() {
 
         var b = lowercaseOptions[Math.floor(Math.random() * lowercaseOptions.length)];
         console.log(b);
-        passwordString += b;
+        passwordArray.push(b);
       }
 
       if (
@@ -95,7 +95,7 @@ function generatePassword() {
 
         var c = numberOptions[Math.floor(Math.random() * numberOptions.length)];
         console.log(c);
-        passwordString += c;
+        passwordArray.push(c);
 
       }
 
@@ -106,13 +106,14 @@ function generatePassword() {
 
         var d = specialOptions[Math.floor(Math.random() * specialOptions.length)];
         console.log(d);
-        passwordString += d;
+        passwordArray.push(d);
 
       }
 
       
     } 
-  } 
+  } console.log(passwordArray.join(""));
+  return passwordArray.join(""); 
 }
 
 
