@@ -1,6 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Copy Password button 
+
+function copyPassword() {
+  var copyBtn = document.querySelector("#copy");
+  password.select(); 
+  document.execCommand("copy");
+}
+
+copyBtn.addEventListener("click", copyPassword); 
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -21,7 +31,7 @@ function generatePassword() {
 
   // Password length must be 8-128 characters 
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("Enter a character length between 8 and 128.");
+    return alert("Enter a character length between 8 and 128.");
   }
 
   // Collect password criteria from user 
@@ -61,12 +71,12 @@ function generatePassword() {
     includeNumeric === false &&
     includeSpecialChar === false
   ) {
-    alert("At least one character type must be selected to generate a password.");
+    return alert("At least one character type must be selected to generate a password.");
   } else {
 
     // for loop for the length of the password length to choose the character types and add characters to a PW string value 
     var passwordArray=[];
-    for (i = 0; i < passwordLength; i++) {
+    for (i = 0; i < parseInt(passwordLength); i++) {
 
       if (
         includeUppercase === true
@@ -108,13 +118,15 @@ function generatePassword() {
         console.log(d);
         passwordArray.push(d);
 
-      }
+    }
 
       
     } 
   } console.log(passwordArray.join(""));
   return passwordArray.join(""); 
 }
+
+
 
 
   
