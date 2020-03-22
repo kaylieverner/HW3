@@ -86,6 +86,11 @@ function generatePassword() {
         var a = uppercaseOptions[Math.floor(Math.random() * uppercaseOptions.length)];
         console.log(a);
         passwordArray.push(a);
+        console.log(passwordArray.length);
+      }
+
+      if (parseInt(passwordLength) == passwordArray.length) {
+        break;
       }
 
       if (
@@ -96,6 +101,10 @@ function generatePassword() {
         var b = lowercaseOptions[Math.floor(Math.random() * lowercaseOptions.length)];
         console.log(b);
         passwordArray.push(b);
+      }
+
+      if (passwordLength == passwordArray.length) {
+        break;
       }
 
       if (
@@ -109,6 +118,10 @@ function generatePassword() {
 
       }
 
+      if (passwordLength == passwordArray.length) {
+        break;
+      }
+
       if (
         includeSpecialChar === true
       ) {
@@ -118,6 +131,10 @@ function generatePassword() {
         console.log(d);
         passwordArray.push(d);
 
+    }
+
+    if (passwordLength == passwordArray.length) {
+      break;
     }
 
       
